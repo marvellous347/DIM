@@ -125,75 +125,77 @@ def hsv_to_rgb(h, s, v):
     return (int)(R), (int)(G), (int)(B) 
  
  
-window = Tk() 
-window.title("kolirni modeli") 
-window.geometry("1000x300") 
-# labels 
-lb1 = Label(window, text="R = ", font=("Arial", 14)) 
-lb2 = Label(window, text="G = ", font=("Arial", 14)) 
-lb3 = Label(window, text="B = ", font=("Arial", 14)) 
-lb1.grid(column=0, row=0) 
-lb2.grid(column=0, row=1) 
-lb3.grid(column=0, row=2) 
- 
-lb4 = Label(window, text="C = ", font=("Arial", 14)) 
-lb5 = Label(window, text="M = ", font=("Arial", 14)) 
-lb6 = Label(window, text="Y = ", font=("Arial", 14)) 
-lb7 = Label(window, text="K = ", font=("Arial", 14)) 
-lb4.grid(column=5, row=0) 
-lb5.grid(column=5, row=1) 
-lb6.grid(column=5, row=2) 
-lb7.grid(column=5, row=3) 
- 
-lb8 = Label(window, text="H = ", font=("Arial", 14)) 
-lb9 = Label(window, text="S = ", font=("Arial", 14)) 
-lb10 = Label(window, text="V = ", font=("Arial", 14)) 
-lb8.grid(column=10, row=0) 
-lb9.grid(column=10, row=1) 
-lb10.grid(column=10, row=2) 
- 
-lb11 = Label(window, text="HEX =  ", font=("Arial", 14)) 
-lb11.grid(column=0, row=5) 
- 
-# textboxes 
-tb1 = Entry(window, width=10) 
-tb1.grid(column=1, row=0) 
-tb2 = Entry(window, width=10) 
-tb2.grid(column=1, row=1) 
-tb3 = Entry(window, width=10) 
-tb3.grid(column=1, row=2) 
- 
-tb4 = Entry(window, width=10) 
-tb4.grid(column=6, row=0) 
-tb5 = Entry(window, width=10) 
-tb5.grid(column=6, row=1) 
-tb6 = Entry(window, width=10) 
-tb6.grid(column=6, row=2) 
-tb7 = Entry(window, width=10) 
-tb7.grid(column=6, row=3) 
- 
-tb8 = Entry(window, width=10) 
-tb8.grid(column=16, row=0) 
-tb9 = Entry(window, width=10) 
-tb9.grid(column=16, row=1) 
-tb10 = Entry(window, width=10) 
-tb10.grid(column=16, row=2) 
- 
-tb11 = Entry(window, width=10) 
-tb11.grid(column=1, row=5) 
- 
- 
-def click_button1(): 
-    R = (int)(tb1.get()) 
-    G = (int)(tb2.get()) 
-    B = (int)(tb3.get()) 
-    C, M, Y, K = rgb_to_cmyk(R, G, B) 
-    H, S, V = rgb_to_hsv(R, G, B) 
-    color = '#%02x%02x%02x' % (R, G, B) 
-    tb4.delete(0, END) 
-    tb4.insert(0, C) 
-    tb5.delete(0, END) 
-    tb5.insert(0, M) 
+window = Tk()
+window.title("Color Models")
+window.geometry("1000x300")
+
+# Labels
+lb1 = Label(window, text="R =", font=("Arial", 14))
+lb2 = Label(window, text="G =", font=("Arial", 14))
+lb3 = Label(window, text="B =", font=("Arial", 14))
+lb1.grid(column=0, row=0)
+lb2.grid(column=0, row=1)
+lb3.grid(column=0, row=2)
+
+lb4 = Label(window, text="C =", font=("Arial", 14))
+lb5 = Label(window, text="M =", font=("Arial", 14))
+lb6 = Label(window, text="Y =", font=("Arial", 14))
+lb7 = Label(window, text="K =", font=("Arial", 14))
+lb4.grid(column=5, row=0)
+lb5.grid(column=5, row=1)
+lb6.grid(column=5, row=2)
+lb7.grid(column=5, row=3)
+
+lb8 = Label(window, text="H =", font=("Arial", 14))
+lb9 = Label(window, text="S =", font=("Arial", 14))
+lb10 = Label(window, text="V =", font=("Arial", 14))
+lb8.grid(column=10, row=0)
+lb9.grid(column=10, row=1)
+lb10.grid(column=10, row=2)
+
+lb11 = Label(window, text="HEX =", font=("Arial", 14))
+lb11.grid(column=0, row=5)
+
+# Textboxes
+tb1 = Entry(window, width=10)
+tb1.grid(column=1, row=0)
+tb2 = Entry(window, width=10)
+tb2.grid(column=1, row=1)
+tb3 = Entry(window, width=10)
+tb3.grid(column=1, row=2)
+
+tb4 = Entry(window, width=10)
+tb4.grid(column=6, row=0)
+tb5 = Entry(window, width=10)
+tb5.grid(column=6, row=1)
+tb6 = Entry(window, width=10)
+tb6.grid(column=6, row=2)
+tb7 = Entry(window, width=10)
+tb7.grid(column=6, row=3)
+
+tb8 = Entry(window, width=10)
+tb8.grid(column=16, row=0)
+tb9 = Entry(window, width=10)
+tb9.grid(column=16, row=1)
+tb10 = Entry(window, width=10)
+tb10.grid(column=16, row=2)
+
+tb11 = Entry(window, width=10)
+tb11.grid(column=1, row=5)
+
+
+def click_button1():
+    R = int(tb1.get())
+    G = int(tb2.get())
+    B = int(tb3.get())
+    C, M, Y, K = rgb_to_cmyk(R, G, B)
+    H, S, V = rgb_to_hsv(R, G, B)
+    color = '#%02x%02x%02x' % (R, G, B)
+    tb4.delete(0, END)
+    tb4.insert(0, C)
+    tb5.delete(0, END)
+    tb5.insert(0, M)
+
     tb6.delete(0, END) 
     tb6.insert(0, Y) 
     tb7.delete(0, END) 
@@ -230,65 +232,65 @@ def click_button2():
     tb11.insert(0, color) 
     window['background'] = color 
     click_button1() 
- 
- 
-def click_button3(): 
-    H = (int)(tb8.get()) 
-    S = (int)(tb9.get()) 
-    V = (int)(tb10.get()) 
-    R, G, B = hsv_to_rgb(H, S, V) 
-    color = '#%02x%02x%02x' % (R, G, B) 
- 
-    tb1.delete(0, END) 
-    tb1.insert(0, R) 
-    tb2.delete(0, END) 
-    tb2.insert(0, G) 
-    tb3.delete(0, END) 
-    tb3.insert(0, B) 
- 
-    tb11.delete(0, END) 
-    tb11.insert(0, color) 
-    window['background'] = color 
- 
-    C, M, Y, K = rgb_to_cmyk(R, G, B) 
- 
-    tb4.delete(0, END) 
-    tb4.insert(0, C) 
-    tb5.delete(0, END) 
-    tb5.insert(0, M) 
-    tb6.delete(0, END) 
-    tb6.insert(0, Y) 
-    tb7.delete(0, END) 
-    tb7.insert(0, K) 
- 
- 
-def click_button4(): 
-    tb1.delete(0, END) 
-    tb2.delete(0, END) 
-    tb3.delete(0, END) 
-    tb4.delete(0, END) 
-    tb5.delete(0, END) 
-    tb6.delete(0, END) 
-    tb7.delete(0, END) 
-    tb8.delete(0, END) 
-    tb9.delete(0, END) 
-    tb10.delete(0, END) 
-    tb11.delete(0, END) 
-    window['background'] = '#%02x%02x%02x' % (255, 255, 255) 
- 
- 
-btn1 = Button(text="from RGB", background="#555", foreground="#ccc", 
-              padx="15", pady="6", font="15", command=click_button1) 
-btn2 = Button(text="from CMYK", background="#555", foreground="#ccc", 
-              padx="15", pady="6", font="15", command=click_button2) 
-btn3 = Button(text="from HSV", background="#555", foreground="#ccc", 
-              padx="15", pady="6", font="15", command=click_button3) 
-btn4 = Button(text="Clear", background="#555", foreground="#ccc", 
-              padx="15", pady="6", font="15", command=click_button4) 
-btn1.place(x=375, y=25) 
-btn2.place(x=625, y=25) 
-btn3.place(x=875, y=25) 
-btn4.place(x=615, y=100) 
-window.mainloop() 
 
- 
+
+def click_button3():
+    H = int(tb8.get())
+    S = int(tb9.get())
+    V = int(tb10.get())
+    R, G, B = hsv_to_rgb(H, S, V)
+    color = '#%02x%02x%02x' % (R, G, B)
+
+    tb1.delete(0, END)
+    tb1.insert(0, R)
+    tb2.delete(0, END)
+    tb2.insert(0, G)
+    tb3.delete(0, END)
+    tb3.insert(0, B)
+
+    tb11.delete(0, END)
+    tb11.insert(0, color)
+    window['background'] = color
+
+    C, M, Y, K = rgb_to_cmyk(R, G, B)
+
+    tb4.delete(0, END)
+    tb4.insert(0, C)
+    tb5.delete(0, END)
+    tb5.insert(0, M)
+    tb6.delete(0, END)
+    tb6.insert(0, Y)
+    tb7.delete(0, END)
+    tb7.insert(0, K)
+
+
+def click_button4():
+    tb1.delete(0, END)
+    tb2.delete(0, END)
+    tb3.delete(0, END)
+    tb4.delete(0, END)
+    tb5.delete(0, END)
+    tb6.delete(0, END)
+    tb7.delete(0, END)
+    tb8.delete(0, END)
+    tb9.delete(0, END)
+    tb10.delete(0, END)
+    tb11.delete(0, END)
+    window['background'] = '#%02x%02x%02x' % (255, 255, 255)
+
+
+btn1 = Button(text="from RGB", background="#555", foreground="#ccc",
+              padx="15", pady="6", font="15", command=click_button1)
+btn2 = Button(text="from CMYK", background="#555", foreground="#ccc",
+              padx="15", pady="6", font="15", command=click_button2)
+btn3 = Button(text="from HSV", background="#555", foreground="#ccc",
+              padx="15", pady="6", font="15", command=click_button3)
+btn4 = Button(text="Clear", background="#555", foreground="#ccc",
+              padx="15", pady="6", font="15", command=click_button4)
+
+btn1.place(x=375, y=25)
+btn2.place(x=625, y=25)
+btn3.place(x=875, y=25)
+btn4.place(x=615, y=100)
+
+window.mainloop()
