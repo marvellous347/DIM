@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 
-path = 'ЦОЗ\Labs\Lab3\pict.png'
+path = 'Lab1\image.png'
 img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-cv2.imshow('ЦОЗ\Labs\Lab3\pict', img)
+cv2.imshow('Lab1\image.png', img)
 c = cv2.bitwise_not(img)
 cv2.imshow('c', c)
 d = 255 / np.log(1 + np.max(img))

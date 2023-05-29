@@ -5,8 +5,8 @@ import cv2
 from matplotlib import pyplot as plt 
 
 #img read
-logo = cv2.imread("D:\LNU\logo.png") 
-img = cv2.imread("D:\LNU\img.jpg") 
+logo = cv2.imread("Labs\Lab5\logo.png") 
+img = cv2.imread("Labs\Lab5\img.jpg") 
 
 #Отримую розміри зчитаних зображень
 (wH, wW) = logo.shape[:2] 
@@ -20,7 +20,7 @@ result = cv2.addWeighted(destination, 1, logo, 0.7, 0)
 img[h - wH - 10:h - 10, w - wW - 10:w - 10] = result 
 
 #Збереження зображення з водяним знаком
-cv2.imwrite("ЦОЗ\Labs\Lab5\watermarked.jpg", img)
+cv2.imwrite("Labs\Lab5\watermarked.jpg", img)
 
 #Відображення зображення
 RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) 

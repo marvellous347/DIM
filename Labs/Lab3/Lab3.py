@@ -7,7 +7,7 @@ import numpy as np
 from scipy import ndimage 
  
 # 0. Read the image 
-image  = io.imread('ЦОЗ\Labs\Lab3\pict.png',pilmode="L") 
+image  = io.imread('Lab3\pict.png',pilmode="L") 
  
 # 1. Get the histogram of the image 
 hist, bin_edges = np.histogram(image, bins='auto') 

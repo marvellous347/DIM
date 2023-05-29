@@ -4,7 +4,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 # Read the image
-pic = np.array(Image.open('ЦОЗ/Labs/Lab3/pict.png'))
+pic = np.array(Image.open('Lab3\pict.png'))
 
 # Display the original image
 plt.title('Original')

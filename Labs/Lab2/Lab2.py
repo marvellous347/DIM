@@ -15,7 +15,7 @@ def plot(data, title):
     plt.title(title)
 plot.i = 0
 #im1 = Image.open('Labs\Lab2\q1.png')
-im1 = Image.open('ЦОЗ\Labs\Lab2\q2.png')
+im1 = Image.open('Lab2\q2.png')
 im = im1.convert('L')
 data = np.array(im, dtype=float)
 plot(im, 'Original')
